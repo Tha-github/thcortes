@@ -12,37 +12,50 @@ body {
   overflow-x: hidden;
 }
 
-/* HERO */
+/* HERO (BANNER) */
 .hero {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px 0;
+}
+
+.hero-img-container {
   position: relative;
-  text-align: center;
+  width: 90%;
+  max-width: 380px;
+  border-radius: 25px;
   overflow: hidden;
+  box-shadow: 0 0 25px rgba(228, 183, 93, 0.2);
 }
 
 .hero-img {
   width: 100%;
-  height: 90vh;
+  height: 520px;
   object-fit: cover;
+  object-position: center top;
   filter: brightness(0.5);
+  border-radius: 25px;
 }
 
 .hero-text {
   position: absolute;
-  top: 50%;
+  bottom: 90px;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
   text-align: center;
+  width: 90%;
 }
 
 .hero-text h1 {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   color: #fff;
   text-transform: uppercase;
   line-height: 1.4;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
 }
 
 .hero-text span {
-  color: #e4b75d;
+  color: #f5ca06;
   font-weight: bold;
 }
 
@@ -53,40 +66,35 @@ body {
 }
 
 .links h2 {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   margin-bottom: 30px;
-  color: #e4b75d;
+  color: #f5ca06;
   letter-spacing: 1px;
 }
 
-/* CARD STYLE */
+/* CARD STYLE (sem imagem) */
 .card {
   background-color: #111;
   border: 1px solid #2a2a2a;
-  border-radius: 15px;
+  border-radius: 25px;
   margin: 20px auto;
   max-width: 380px;
   overflow: hidden;
   box-shadow: 0 0 20px rgba(228, 183, 93, 0.1);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
   transform: translateY(-5px);
-}
-
-.card img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
+  box-shadow: 0 0 25px rgba(228, 183, 93, 0.2);
 }
 
 .card-content {
-  padding: 20px;
+  padding: 25px 20px;
 }
 
 .card-content h3 {
-  color: #e4b75d;
+  color: #f5ca06;
   margin-bottom: 10px;
   font-size: 1.2rem;
 }
@@ -98,7 +106,7 @@ body {
 }
 
 .btn {
-  background-color: #e4b75d;
+  background-color: #f5ca06;
   color: #000;
   padding: 10px 18px;
   border-radius: 25px;
@@ -117,4 +125,15 @@ footer {
   padding: 20px;
   font-size: 0.85rem;
   color: #aaa;
+}
+
+/* RESPONSIVO */
+@media (max-width: 480px) {
+  .hero-img {
+    height: 460px;
+  }
+
+  .hero-text h1 {
+    font-size: 1.2rem;
+  }
 }
