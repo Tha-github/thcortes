@@ -130,10 +130,6 @@ footer {
 
 /* RESPONSIVO */
 @media (max-width: 480px) {
-  .hero-img {
-    height: 460px;
-  }
-
   .hero-text h1 {
     font-size: 1.2rem;
   }
