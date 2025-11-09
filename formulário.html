@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TH CORTES</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #111;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .card {
+      background: #1c1c1c;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .card h3 {
+      text-align: center;
+      color: #f5ca06;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 500;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      background: #2a2a2a;
+      color: #fff;
+      font-size: 14px;
+    }
+
+    input:focus {
+      outline: 2px solid #f5ca06;
+    }
+
+    button {
+      width: 100%;
+      background: #f5ca06;
+      color: #000;
+      border: none;
+      padding: 12px;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background: #d4af04;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h3>Agende seu horário</h3>
+    <form id="formAgendamento">
+      <div class="form-group">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" required>
+      </div>
+
+      <div class="form-group">
+        <label for="telefone">Telefone:</label>
+        <input type="tel" id="telefone" required>
+      </div>
+
+      <div class="form-group">
+        <label for="data">Quando você gostaria de agendar?</label>
+        <input type="date" id="data" required>
+      </div>
+
+      <div class="form-group">
+        <label for="hora">Qual seria o melhor horário pra você?</label>
+        <input type="time" id="hora" required>
+      </div>
+
+      <button type="submit">Enviar pelo WhatsApp</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("formAgendamento").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const nome = document.getElementById("nome").value;
+      const telefone = document.getElementById("telefone").value;
+      const data = document.getElementById("data").value;
+      const hora = document.getElementById("hora").value;
+
+      const mensagem = `*Novo agendamento:*\n👤 Nome: ${nome}\n📞 Telefone: ${telefone}\n📅 Data: ${data}\n⏰ Horário: ${hora}`;
+      const numeroWhatsApp = "5518996451887"; // coloque o número com DDI e DDD
+      const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
+
+      window.open(url, "_blank");
+    });
+  </script>
+</body>
+</html>
